@@ -1,22 +1,47 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { HeroSectionComponent } from './sections/hero-section.component';
-import { ProblemSectionComponent } from './sections/problem-section.component';
-import { SolutionBenefitsSectionComponent } from './sections/solution-benefits-section.component';
-import { ProofCtaSectionComponent } from './sections/proof-cta-section.component';
+import { AfterViewInit, Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    HeroSectionComponent,
-    ProblemSectionComponent,
-    SolutionBenefitsSectionComponent,
-    ProofCtaSectionComponent
-  ],
   templateUrl: './app.html',
-  styleUrl: './app.css',
-  encapsulation: ViewEncapsulation.None
+  styleUrl: './app.css'
 })
-export class App {
-  protected readonly whatsappUrl =
-    'https://wa.me/5548988281035?text=Fala%2C%20vim%20pelo%20site%20Impulso%20Barbeiros%20e%20quero%20encher%20minha%20agenda.';
+export class App implements AfterViewInit {
+  protected readonly currentYear = new Date().getFullYear();
+
+  ngAfterViewInit(): void {
+    this.initRevealObserver();
+    this.initFaq();
+  }
+
+  private initRevealObserver(): void {
+    const sections = document.querySelectorAll<HTMLElement>('.reveal');
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.14, rootMargin: '0px 0px -30px 0px' }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  }
+
+  private initFaq(): void {
+    const faqButtons = document.querySelectorAll<HTMLButtonElement>('.faq-question');
+    faqButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const isOpen = item?.classList.contains('active');
+        document.querySelectorAll('.faq-item.active').forEach((openItem) => {
+          openItem.classList.remove('active');
+        });
+        if (!isOpen && item) item.classList.add('active');
+      });
+    });
+  }
+
 }

@@ -1,0 +1,1080 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Landing Pages para Nutricionistas</title>
+  <meta name="description" content="Criação de landing pages para nutricionistas autônomas converterem seguidores em clientes pagantes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #4A7C6F;
+      --color-primary-light: #7BAE9E;
+      --color-accent: #E8A87C;
+      --color-accent-light: #F2C9A8;
+      --color-bg: #FAFAF7;
+      --color-bg-section: #F0EDE6;
+      --color-text: #2C2C2C;
+      --color-text-muted: #6B6B6B;
+      --color-white: #FFFFFF;
+      --shadow: 0 12px 30px rgba(44, 44, 44, 0.08);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "DM Sans", Arial, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.55;
+      background-image:
+        radial-gradient(circle at 20% 10%, rgba(123, 174, 158, 0.09), transparent 33%),
+        radial-gradient(circle at 80% 5%, rgba(232, 168, 124, 0.1), transparent 30%),
+        radial-gradient(circle at 60% 90%, rgba(123, 174, 158, 0.09), transparent 35%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.08;
+      background-image: radial-gradient(#000 0.5px, transparent 0.5px);
+      background-size: 3px 3px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 12;
+      backdrop-filter: blur(8px);
+      background: rgba(250, 250, 247, 0.84);
+      border-bottom: 1px solid rgba(74, 124, 111, 0.12);
+    }
+
+    .header-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 16px;
+    }
+
+    .logo {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      color: var(--color-primary);
+    }
+
+    .nav {
+      display: none;
+      gap: 18px;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      font-size: 0.97rem;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      color: var(--color-primary);
+      outline: none;
+    }
+
+    .section {
+      padding: 56px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-alt {
+      background: var(--color-bg-section);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.2;
+      font-family: "Playfair Display", Georgia, serif;
+      color: var(--color-text);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6.4vw, 3.4rem);
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 4.8vw, 2.45rem);
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--color-text-muted);
+      margin-bottom: 30px;
+      max-width: 760px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .hero {
+      padding: 54px 0 58px;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .hero-copy p {
+      margin-top: 14px;
+      font-size: 1.07rem;
+      color: var(--color-text-muted);
+      max-width: 630px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      min-height: 50px;
+      padding: 12px 24px;
+      font: 600 1rem/1 "DM Sans", Arial, sans-serif;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn:focus-visible,
+    .link-btn:focus-visible,
+    .faq-question:focus-visible,
+    .input:focus-visible,
+    .select:focus-visible {
+      outline: 3px solid rgba(74, 124, 111, 0.35);
+      outline-offset: 2px;
+    }
+
+    .btn-primary {
+      color: var(--color-white);
+      background: var(--color-primary);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #3f6b60;
+    }
+
+    .btn-accent {
+      color: var(--color-text);
+      background: var(--color-accent);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-accent:hover {
+      transform: translateY(-2px);
+      background: #de9968;
+    }
+
+    .link-btn {
+      font-weight: 600;
+      color: var(--color-primary);
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 8px;
+    }
+
+    .micro-proof {
+      margin-top: 14px;
+      color: var(--color-text-muted);
+      font-weight: 500;
+      font-size: 0.97rem;
+    }
+
+    .mockup {
+      background: linear-gradient(145deg, #578f7f, #7baea0);
+      border-radius: 34px;
+      padding: 20px;
+      min-height: 430px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .mockup::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      top: -60px;
+      right: -30px;
+    }
+
+    .phone {
+      width: min(300px, 100%);
+      min-height: 380px;
+      margin: 0 auto;
+      border: 7px solid #1f2a28;
+      border-radius: 36px;
+      background: var(--color-bg);
+      padding: 18px 16px;
+    }
+
+    .phone .img {
+      height: 130px;
+      border-radius: 16px;
+      background: linear-gradient(160deg, #7baea0, #4a7c6f);
+      margin-bottom: 14px;
+    }
+
+    .phone .line {
+      height: 11px;
+      border-radius: 999px;
+      background: #dae7e1;
+      margin-bottom: 8px;
+    }
+
+    .phone .line.short {
+      width: 62%;
+    }
+
+    .phone .cta {
+      margin-top: 14px;
+      height: 42px;
+      border-radius: 999px;
+      background: var(--color-accent);
+    }
+
+    .cards {
+      display: grid;
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: 0 8px 22px rgba(44, 44, 44, 0.07);
+      border: 1px solid rgba(74, 124, 111, 0.11);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 24px rgba(44, 44, 44, 0.1);
+    }
+
+    .pain-icon {
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+    }
+
+    .section-note {
+      margin-top: 20px;
+      font-weight: 500;
+      color: var(--color-primary);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .step {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      border: 1px solid rgba(74, 124, 111, 0.16);
+      position: relative;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--color-primary);
+      font-size: 1.05rem;
+    }
+
+    .checks {
+      display: grid;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--color-white);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      border: 1px solid rgba(232, 168, 124, 0.35);
+    }
+
+    .check {
+      color: var(--color-accent);
+      font-weight: 700;
+      font-size: 1.2rem;
+      line-height: 1;
+      transform: translateY(2px);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff0e4;
+      border: 1px solid rgba(232, 168, 124, 0.5);
+      color: #995f3a;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .testimonial-card {
+      display: grid;
+      gap: 12px;
+    }
+
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--color-white);
+      background: linear-gradient(160deg, #4a7c6f, #7baea0);
+      font-weight: 700;
+    }
+
+    .stars {
+      color: #f4aa62;
+      letter-spacing: 1px;
+    }
+
+    .roi-card {
+      background: var(--color-primary);
+      color: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      max-width: 720px;
+    }
+
+    .roi-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 6px;
+    }
+
+    .roi-extra {
+      margin-top: 14px;
+      color: var(--color-text-muted);
+      font-weight: 500;
+    }
+
+    .about {
+      display: grid;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .photo {
+      border-radius: 30px;
+      min-height: 320px;
+      background: linear-gradient(145deg, #5f9283, #8cc3b1);
+      box-shadow: var(--shadow);
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .mini-badge {
+      background: var(--color-white);
+      border: 1px solid rgba(74, 124, 111, 0.2);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .faq {
+      display: grid;
+      gap: 10px;
+      max-width: 800px;
+    }
+
+    .faq-item {
+      background: var(--color-white);
+      border: 1px solid rgba(74, 124, 111, 0.18);
+      border-radius: var(--radius-sm);
+      overflow: clip;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      min-height: 56px;
+      text-align: left;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font: 600 1rem/1.3 "DM Sans", Arial, sans-serif;
+      color: var(--color-text);
+      cursor: pointer;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.28s ease;
+      color: var(--color-text-muted);
+      padding: 0 16px;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 180px;
+      padding-bottom: 16px;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-icon {
+      transition: transform 0.2s ease;
+      font-size: 1.4rem;
+      color: var(--color-primary);
+    }
+
+    .cta-final {
+      background: var(--color-primary);
+      color: var(--color-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-final::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.12;
+      background-image: radial-gradient(#fff 0.4px, transparent 0.4px);
+      background-size: 3px 3px;
+      pointer-events: none;
+    }
+
+    .form-box {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--color-text);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-top: 24px;
+      max-width: 700px;
+    }
+
+    .field-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .input,
+    .select {
+      width: 100%;
+      min-height: 48px;
+      border-radius: 12px;
+      border: 1px solid rgba(74, 124, 111, 0.32);
+      padding: 10px 12px;
+      font: 400 1rem/1.2 "DM Sans", Arial, sans-serif;
+      color: var(--color-text);
+      background: #fff;
+    }
+
+    .input.error,
+    .select.error {
+      border-color: #c04141;
+      background: #fff8f8;
+    }
+
+    .error-msg {
+      margin-top: 4px;
+      color: #a43737;
+      font-size: 0.86rem;
+      min-height: 18px;
+    }
+
+    .success-msg {
+      margin-top: 12px;
+      font-weight: 600;
+      color: #2e705f;
+      min-height: 24px;
+    }
+
+    .whatsapp-direct {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-whats {
+      background: #25d366;
+      color: #fff;
+      min-height: 48px;
+    }
+
+    .btn-whats:hover {
+      background: #1cb657;
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      padding: 28px 0 34px;
+      border-top: 1px solid rgba(74, 124, 111, 0.15);
+      background: #f8f7f4;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-wrap {
+      display: grid;
+      gap: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      color: var(--color-text-muted);
+    }
+
+    .footer-note {
+      color: var(--color-text-muted);
+      font-size: 0.93rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+      will-change: transform, opacity;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-anim {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: heroEnter 0.65s ease forwards;
+    }
+
+    .hero-anim:nth-child(1) { animation-delay: 0.08s; }
+    .hero-anim:nth-child(2) { animation-delay: 0.22s; }
+    .hero-anim:nth-child(3) { animation-delay: 0.36s; }
+    .hero-anim:nth-child(4) { animation-delay: 0.5s; }
+
+    @keyframes heroEnter {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .lazy-section {
+      content-visibility: auto;
+      contain-intrinsic-size: 900px;
+    }
+
+    @media (min-width: 768px) {
+      .section { padding: 74px 0; }
+      .hero-grid {
+        grid-template-columns: 1.05fr 0.95fr;
+      }
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .timeline {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .checks {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .about {
+        grid-template-columns: 0.92fr 1.08fr;
+      }
+      .field-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .field-grid .full {
+        grid-column: span 2;
+      }
+      .nav {
+        display: flex;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .cards {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .timeline {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .hero {
+        padding-top: 66px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-wrap">
+      <a href="#inicio" class="logo">LP Nutri Pro</a>
+      <nav class="nav" aria-label="Navegacao principal">
+        <a href="#inicio">Início</a>
+        <a href="#processo">Como funciona</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 class="hero-anim">Você tem seguidores. Mas e clientes?</h1>
+          <p class="hero-anim">Crio landing pages para nutricionistas transformarem seu Instagram em uma máquina de agendamentos - sem depender de indicação.</p>
+          <div class="actions hero-anim">
+            <a class="btn btn-primary" href="#contato">Quero minha LP agora</a>
+            <a class="link-btn" href="#depoimentos">Ver exemplos de páginas</a>
+          </div>
+          <p class="micro-proof hero-anim">⭐ +20 nutricionistas já têm sua página | Resultados em 7 dias</p>
+        </div>
+        <div class="mockup hero-anim" role="img" aria-label="Mockup de celular com landing page de nutricionista">
+          <div class="phone">
+            <div class="img" aria-hidden="true"></div>
+            <div class="line"></div>
+            <div class="line short"></div>
+            <div class="line"></div>
+            <div class="line short"></div>
+            <div class="cta" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt lazy-section reveal" id="dor">
+      <div class="container">
+        <h2>Você se identifica com isso?</h2>
+        <p class="section-subtitle">Seu Instagram já mostra que você é boa no que faz, mas isso ainda nao virou previsibilidade de agenda.</p>
+        <div class="cards">
+          <article class="card">
+            <div class="pain-icon">📱</div>
+            <p>Tem seguidores no Instagram mas eles não viram clientes</p>
+          </article>
+          <article class="card">
+            <div class="pain-icon">💬</div>
+            <p>Fica esperando indicação pra fechar consulta</p>
+          </article>
+          <article class="card">
+            <div class="pain-icon">😓</div>
+            <p>Tem vergonha de mandar o link do perfil como "site"</p>
+          </article>
+          <article class="card">
+            <div class="pain-icon">🔄</div>
+            <p>Perde cliente pra concorrente que parece mais profissional</p>
+          </article>
+        </div>
+        <p class="section-note">Se você marcou qualquer um desses, uma landing page profissional vai mudar o seu jogo.</p>
+      </div>
+    </section>
+
+    <section class="section lazy-section reveal" id="processo">
+      <div class="container">
+        <h2>Simples assim:</h2>
+        <div class="timeline">
+          <article class="step">
+            <strong>📋 Me conta sobre você</strong>
+            <p>Formulário rápido sobre sua especialidade, público e estilo.</p>
+          </article>
+          <article class="step">
+            <strong>🎨 Crio sua página em 7 dias</strong>
+            <p>Design exclusivo, textos persuasivos e otimizada pra mobile.</p>
+          </article>
+          <article class="step">
+            <strong>✅ Você aprova</strong>
+            <p>Ajustes ilimitados até ficar perfeito para seu posicionamento.</p>
+          </article>
+          <article class="step">
+            <strong>🚀 Sua LP no ar</strong>
+            <p>Pronta pra receber clientes 24h por dia direto no WhatsApp.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt lazy-section reveal" id="inclui">
+      <div class="container">
+        <h2>O que você recebe:</h2>
+        <div class="checks">
+          <div class="check-item"><span class="check">✓</span><span>Landing page responsiva (funciona perfeito no celular)</span></div>
+          <div class="check-item"><span class="check">✓</span><span>Textos persuasivos escritos por mim (você não precisa escrever nada)</span></div>
+          <div class="check-item"><span class="check">✓</span><span>Design exclusivo no seu estilo e cores</span></div>
+          <div class="check-item"><span class="check">✓</span><span>Integração com WhatsApp para agendamento direto</span></div>
+          <div class="check-item"><span class="check">✓</span><span>Formulário de captação de leads</span></div>
+          <div class="check-item"><span class="check">✓</span><span>Entrega em até 7 dias úteis</span></div>
+          <div class="check-item"><span class="check">✓</span><span>Revisões ilimitadas até sua aprovação</span></div>
+          <div class="check-item"><span class="check">✓</span><span>Suporte por 30 dias após entrega</span></div>
+        </div>
+        <p class="badge">Tudo isso por menos do que um mês de anúncio no Instagram</p>
+      </div>
+    </section>
+
+    <section class="section lazy-section reveal" id="depoimentos">
+      <div class="container">
+        <h2>O que nutricionistas falam:</h2>
+        <div class="cards">
+          <article class="card testimonial-card">
+            <div class="person">
+              <div class="avatar" aria-hidden="true">AR</div>
+              <p><strong>Ana Paula R.</strong><br>nutricionista funcional - SP</p>
+            </div>
+            <p>"Antes eu tinha vergonha de mandar meu 'link na bio' pra possíveis clientes. Agora mando minha LP e as pessoas chegam já querendo marcar consulta. Fechei 4 clientes na primeira semana."</p>
+            <div class="stars" aria-label="5 estrelas">⭐⭐⭐⭐⭐</div>
+          </article>
+          <article class="card testimonial-card">
+            <div class="person">
+              <div class="avatar" aria-hidden="true">CS</div>
+              <p><strong>Camila S.</strong><br>nutricionista esportiva</p>
+            </div>
+            <p>"Achei que ia demorar meses pra ter uma página profissional. Em 7 dias estava tudo pronto, com meu estilo, minhas cores. Parece que eu mesma fiz."</p>
+            <div class="stars" aria-label="5 estrelas">⭐⭐⭐⭐⭐</div>
+          </article>
+          <article class="card testimonial-card">
+            <div class="person">
+              <div class="avatar" aria-hidden="true">JM</div>
+              <p><strong>Juliana M.</strong><br>nutricionista clínica</p>
+            </div>
+            <p>"O diferencial foi os textos. Ele escreveu tudo, eu só aprovei. Minha LP converte muito melhor do que meu perfil do Instagram."</p>
+            <div class="stars" aria-label="5 estrelas">⭐⭐⭐⭐⭐</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt lazy-section reveal" id="roi">
+      <div class="container">
+        <h2>Faz a conta:</h2>
+        <div class="roi-card">
+          <ul class="roi-list">
+            <li>Consulta online média: R$ 250</li>
+            <li>LP traz 2 clientes novos por mês: R$ 500</li>
+            <li>Investimento na LP: a partir de R$ 497</li>
+            <li>→ A página se paga no 1º mês.</li>
+            <li>→ Do 2º mês em diante, lucro puro.</li>
+          </ul>
+        </div>
+        <p class="roi-extra">E esses clientes podem ficar com você por 6, 12, 24 meses.</p>
+      </div>
+    </section>
+
+    <section class="section lazy-section reveal" id="sobre">
+      <div class="container about">
+        <div class="photo" role="img" aria-label="Foto placeholder do criador da landing page"></div>
+        <div>
+          <h2>Quem vai criar sua página:</h2>
+          <p>Oi, sou <strong>[Seu Nome]</strong>. Trabalho criando landing pages para profissionais de saúde e bem-estar que vendem seus serviços online.</p>
+          <p style="margin-top:10px;">Entendo a realidade de quem trabalha como autônomo: você é excelente no que faz, mas o marketing toma um tempo que você não tem.</p>
+          <p style="margin-top:10px;">Por isso crio páginas que trabalham por você - enquanto você faz o que ama, sua LP está captando clientes 24h por dia.</p>
+          <div class="badges">
+            <span class="mini-badge">📄 +20 LPs entregues</span>
+            <span class="mini-badge">⚡ Entrega em 7 dias</span>
+            <span class="mini-badge">✅ Satisfação garantida</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt lazy-section reveal" id="faq">
+      <div class="container">
+        <h2>Perguntas frequentes</h2>
+        <div class="faq" aria-label="Perguntas frequentes">
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Preciso ter domínio ou hospedagem?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><p>Não. Entrego a página pronta pra publicar. Posso te orientar na publicação sem custo adicional.</p></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>E se eu não gostar do design?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><p>Revisões ilimitadas até você aprovar. Só finalizo quando você estiver 100% satisfeita.</p></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Em quanto tempo fico com a LP no ar?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><p>O processo leva 7 dias úteis da aprovação do briefing até a entrega final.</p></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Preciso me preocupar com o texto?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><p>Não. Você responde um formulário rápido sobre sua especialidade e eu escrevo tudo.</p></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Como funciona o pagamento?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><p>50% para começar, 50% na entrega. Pix ou cartão.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-final lazy-section reveal" id="contato">
+      <div class="container">
+        <h2 style="color:#fff;">Pronta pra ter sua LP?</h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.86);margin-top:8px;">Preencha o formulário abaixo e eu entro em contato em até 24h.</p>
+
+        <div class="form-box" role="group" aria-label="Formulário de contato">
+          <div class="field-grid">
+            <div class="field">
+              <label for="nome">Nome</label>
+              <input class="input" id="nome" type="text" autocomplete="name" placeholder="Seu nome completo">
+              <div class="error-msg" id="erro-nome"></div>
+            </div>
+            <div class="field">
+              <label for="instagram">Instagram (@)</label>
+              <input class="input" id="instagram" type="text" placeholder="@seuinstagram">
+              <div class="error-msg" id="erro-instagram"></div>
+            </div>
+            <div class="field">
+              <label for="especialidade">Especialidade</label>
+              <select class="select" id="especialidade">
+                <option value="">Selecione</option>
+                <option>Clínica</option>
+                <option>Esportiva</option>
+                <option>Funcional</option>
+                <option>Emagrecimento</option>
+                <option>Outra</option>
+              </select>
+              <div class="error-msg" id="erro-especialidade"></div>
+            </div>
+            <div class="field">
+              <label for="whatsapp">WhatsApp</label>
+              <input class="input" id="whatsapp" type="tel" autocomplete="tel" placeholder="(11) 99999-9999">
+              <div class="error-msg" id="erro-whatsapp"></div>
+            </div>
+            <div class="field full">
+              <button id="enviarContato" class="btn btn-accent" type="button" style="width:100%;">Quero minha LP →</button>
+            </div>
+          </div>
+          <div class="success-msg" id="successMsg" role="status" aria-live="polite"></div>
+          <div class="whatsapp-direct">
+            <span>Ou mande uma mensagem direta:</span>
+            <a class="btn btn-whats" href="https://wa.me/5500000000000?text=Oi!%20Quero%20minha%20landing%20page%20para%20nutricionista." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <strong style="font-family:'Playfair Display',serif;color:var(--color-primary);">LP Nutri Pro</strong>
+      <div class="footer-links">
+        <a href="#inicio">Início</a>
+        <a href="#processo">Como funciona</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <p class="footer-note">Feito com ❤️ para nutricionistas que merecem clientes incríveis</p>
+      <p class="footer-note">© <span id="anoAtual"></span> LP Nutri Pro. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var sections = document.querySelectorAll(".reveal");
+      var observer = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14, rootMargin: "0px 0px -30px 0px" });
+      sections.forEach(function (section) { observer.observe(section); });
+
+      var faqButtons = document.querySelectorAll(".faq-question");
+      faqButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var item = button.closest(".faq-item");
+          var isOpen = item.classList.contains("active");
+          document.querySelectorAll(".faq-item.active").forEach(function (openItem) {
+            openItem.classList.remove("active");
+          });
+          if (!isOpen) {
+            item.classList.add("active");
+          }
+        });
+      });
+
+      var nome = document.getElementById("nome");
+      var instagram = document.getElementById("instagram");
+      var especialidade = document.getElementById("especialidade");
+      var whatsapp = document.getElementById("whatsapp");
+      var btnEnviar = document.getElementById("enviarContato");
+      var successMsg = document.getElementById("successMsg");
+      var anoAtual = document.getElementById("anoAtual");
+
+      anoAtual.textContent = String(new Date().getFullYear());
+
+      function setError(el, id, msg) {
+        var errorEl = document.getElementById(id);
+        if (!errorEl) return;
+        errorEl.textContent = msg;
+        if (msg) el.classList.add("error");
+        else el.classList.remove("error");
+      }
+
+      function cleanPhone(value) {
+        return value.replace(/\D/g, "");
+      }
+
+      function validate() {
+        var ok = true;
+        successMsg.textContent = "";
+
+        if (nome.value.trim().length < 3) {
+          setError(nome, "erro-nome", "Digite seu nome completo.");
+          ok = false;
+        } else {
+          setError(nome, "erro-nome", "");
+        }
+
+        if (!/^@[a-zA-Z0-9._]{2,30}$/.test(instagram.value.trim())) {
+          setError(instagram, "erro-instagram", "Informe seu Instagram no formato @usuario.");
+          ok = false;
+        } else {
+          setError(instagram, "erro-instagram", "");
+        }
+
+        if (!especialidade.value) {
+          setError(especialidade, "erro-especialidade", "Selecione sua especialidade.");
+          ok = false;
+        } else {
+          setError(especialidade, "erro-especialidade", "");
+        }
+
+        if (cleanPhone(whatsapp.value).length < 10) {
+          setError(whatsapp, "erro-whatsapp", "Informe um WhatsApp válido com DDD.");
+          ok = false;
+        } else {
+          setError(whatsapp, "erro-whatsapp", "");
+        }
+
+        return ok;
+      }
+
+      btnEnviar.addEventListener("click", function () {
+        if (!validate()) return;
+
+        btnEnviar.disabled = true;
+        btnEnviar.textContent = "Enviando...";
+        setTimeout(function () {
+          btnEnviar.disabled = false;
+          btnEnviar.textContent = "Quero minha LP →";
+          successMsg.textContent = "Recebi seus dados! Vou te chamar em até 24h no WhatsApp.";
+          nome.value = "";
+          instagram.value = "";
+          especialidade.value = "";
+          whatsapp.value = "";
+        }, 950);
+      });
+
+      [nome, instagram, especialidade, whatsapp].forEach(function (field) {
+        field.addEventListener("input", function () {
+          field.classList.remove("error");
+        });
+      });
+    }());
+  </script>
+</body>
+</html>

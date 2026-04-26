@@ -1,36 +1,193 @@
-<main class="page-shell text-white">
-  <div class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 pb-28 pt-6 sm:gap-8 sm:px-6 sm:pb-16 sm:pt-10">
-    <header class="fade-in-up flex items-center">
-      <p class="text-xs font-extrabold tracking-[0.24em] text-amber-300/85 sm:text-sm">
-        IMPULSO BARBEIROS
-      </p>
-    </header>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <app-hero-section [whatsappUrl]="whatsappUrl" />
-    <app-problem-section />
-    <app-solution-benefits-section />
-    <app-proof-cta-section [whatsappUrl]="whatsappUrl" />
+<header class="site-header">
+  <div class="container header-wrap">
+    <a href="#inicio" class="logo">ImpulsoNutri</a>
+    <nav class="nav" aria-label="Navegacao principal">
+      <a href="#inicio">Início</a>
+      <a href="#processo">Como funciona</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Contato</a>
+    </nav>
   </div>
+</header>
 
-  <a
-    [href]="whatsappUrl"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Falar no WhatsApp"
-    class="whatsapp-float"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 32 32"
-      width="18"
-      height="18"
-      aria-hidden="true"
-      fill="currentColor"
-    >
-      <path
-        d="M19.11 17.44c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.19-.44-2.27-1.4-.84-.75-1.41-1.67-1.57-1.95-.16-.28-.02-.43.12-.57.12-.12.28-.32.41-.48.14-.16.18-.28.27-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.98 2.66 1.12 2.84c.14.18 1.93 2.95 4.67 4.13.65.28 1.16.45 1.56.58.66.21 1.26.18 1.73.11.53-.08 1.65-.67 1.88-1.31.23-.64.23-1.2.16-1.31-.07-.11-.25-.18-.53-.32zM16.01 4.8c-6.18 0-11.2 5.02-11.2 11.2 0 1.97.51 3.89 1.47 5.58L4.73 27.2l5.76-1.51c1.62.88 3.45 1.35 5.32 1.35h.01c6.18 0 11.2-5.02 11.2-11.2S22.19 4.8 16.01 4.8zm0 20.2h-.01c-1.67 0-3.3-.45-4.72-1.3l-.34-.2-3.42.9.91-3.33-.22-.34a9.14 9.14 0 0 1-1.4-4.88c0-5.04 4.1-9.14 9.15-9.14 2.44 0 4.73.95 6.45 2.67a9.07 9.07 0 0 1 2.68 6.46c0 5.04-4.11 9.15-9.16 9.15z"
-      />
-    </svg>
-    Chamar no WhatsApp
-  </a>
+<main id="inicio">
+  <section class="section hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1 class="hero-anim">Você tem seguidores. Mas e clientes?</h1>
+        <p class="hero-anim">Crio landing pages para nutricionistas transformarem seu Instagram em uma máquina de agendamentos - sem depender de indicação.</p>
+        <div class="actions hero-anim">
+          <a class="btn btn-primary" href="#contato">Quero minha LP agora</a>
+          <a class="link-btn" href="#depoimentos">Ver exemplos de páginas</a>
+        </div>
+        <p class="micro-proof hero-anim">⭐ +20 nutricionistas já têm sua página | Resultados em até 2 dias</p>
+      </div>
+      <div class="mockup hero-anim" role="img" aria-label="Mockup de celular com landing page de nutricionista">
+        <div class="phone">
+          <div class="img" aria-hidden="true"></div>
+          <div class="line"></div>
+          <div class="line short"></div>
+          <div class="line"></div>
+          <div class="line short"></div>
+          <div class="cta" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt lazy-section reveal" id="dor">
+    <div class="container">
+      <h2>Você se identifica com isso?</h2>
+      <p class="section-subtitle">Seu Instagram já mostra que você é boa no que faz, mas isso ainda não virou previsibilidade de agenda.</p>
+      <div class="cards">
+        <article class="card"><div class="pain-icon">📱</div><p>Tem seguidores no Instagram mas eles não viram clientes</p></article>
+        <article class="card"><div class="pain-icon">💬</div><p>Fica esperando indicação pra fechar consulta</p></article>
+        <article class="card"><div class="pain-icon">😓</div><p>Tem vergonha de mandar o link do perfil como "site"</p></article>
+        <article class="card"><div class="pain-icon">🔄</div><p>Perde cliente pra concorrente que parece mais profissional</p></article>
+      </div>
+      <p class="section-note">Se você marcou qualquer um desses, uma landing page profissional vai mudar o seu jogo.</p>
+    </div>
+  </section>
+
+  <section class="section lazy-section reveal" id="processo">
+    <div class="container">
+      <h2>Simples assim:</h2>
+      <div class="timeline">
+        <article class="step"><strong>📋 Me conta sobre você</strong><p>Formulário rápido sobre sua especialidade, público e estilo.</p></article>
+        <article class="step"><strong>🎨 Crio sua página em até 2 dias</strong><p>Design exclusivo, textos persuasivos e otimizada pra mobile.</p></article>
+        <article class="step"><strong>✅ Você aprova</strong><p>Ajustes ilimitados até ficar perfeito para seu posicionamento.</p></article>
+        <article class="step"><strong>🚀 Sua LP no ar</strong><p>Pronta pra receber clientes 24h por dia direto no WhatsApp.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt lazy-section reveal" id="inclui">
+    <div class="container">
+      <h2>O que você recebe:</h2>
+      <div class="checks">
+        <div class="check-item"><span class="check">✓</span><span>Landing page responsiva (funciona perfeito no celular)</span></div>
+        <div class="check-item"><span class="check">✓</span><span>Textos persuasivos escritos por mim (você não precisa escrever nada)</span></div>
+        <div class="check-item"><span class="check">✓</span><span>Design exclusivo no seu estilo e cores</span></div>
+        <div class="check-item"><span class="check">✓</span><span>Integração com WhatsApp para agendamento direto</span></div>
+        <div class="check-item"><span class="check">✓</span><span>Formulário de captação de leads</span></div>
+        <div class="check-item"><span class="check">✓</span><span>Entrega em até 2 dias úteis</span></div>
+        <div class="check-item"><span class="check">✓</span><span>Revisões ilimitadas até sua aprovação</span></div>
+        <div class="check-item"><span class="check">✓</span><span>Suporte por 30 dias após entrega</span></div>
+      </div>
+      <p class="badge">Tudo isso por menos do que um mês de anúncio no Instagram</p>
+    </div>
+  </section>
+
+  <section class="section lazy-section reveal" id="depoimentos">
+    <div class="container">
+      <h2>O que nutricionistas falam:</h2>
+      <div class="cards">
+        <article class="card testimonial-card">
+          <div class="person"><div class="avatar" aria-hidden="true">AR</div><p><strong>Ana Paula R.</strong><br>nutricionista funcional - SP</p></div>
+          <p>"Antes eu tinha vergonha de mandar meu 'link na bio' pra possíveis clientes. Agora mando minha LP e as pessoas chegam já querendo marcar consulta. Fechei 4 clientes na primeira semana."</p>
+          <div class="stars" aria-label="5 estrelas">⭐⭐⭐⭐⭐</div>
+        </article>
+        <article class="card testimonial-card">
+          <div class="person"><div class="avatar" aria-hidden="true">CS</div><p><strong>Camila S.</strong><br>nutricionista esportiva</p></div>
+          <p>"Achei que ia demorar meses pra ter uma página profissional. Em até 2 dias estava tudo pronto, com meu estilo, minhas cores. Parece que eu mesma fiz."</p>
+          <div class="stars" aria-label="5 estrelas">⭐⭐⭐⭐⭐</div>
+        </article>
+        <article class="card testimonial-card">
+          <div class="person"><div class="avatar" aria-hidden="true">JM</div><p><strong>Juliana M.</strong><br>nutricionista clínica</p></div>
+          <p>"O diferencial foi os textos. Ele escreveu tudo, eu só aprovei. Minha LP converte muito melhor do que meu perfil do Instagram."</p>
+          <div class="stars" aria-label="5 estrelas">⭐⭐⭐⭐⭐</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt lazy-section reveal" id="roi">
+    <div class="container">
+      <h2>Faz a conta:</h2>
+      <div class="roi-card">
+        <ul class="roi-list">
+          <li>Consulta online média: R$ 250</li>
+          <li>LP traz 2 clientes novos por mês: R$ 500</li>
+          <li>Investimento na LP: a partir de R$ 497</li>
+          <li>→ A página se paga no 1º mês.</li>
+          <li>→ Do 2º mês em diante, lucro puro.</li>
+        </ul>
+      </div>
+      <p class="roi-extra">E esses clientes podem ficar com você por 6, 12, 24 meses.</p>
+    </div>
+  </section>
+
+  <section class="section lazy-section reveal" id="sobre">
+    <div class="container about">
+      <div>
+        <h2>Quem vai criar sua página:</h2>
+        <p>Oi, eu sou a <strong>ImpulsoNutri</strong>. Crio landing pages para profissionais de saúde e bem-estar que vendem seus serviços online.</p>
+        <p style="margin-top:10px;">Entendo a realidade de quem trabalha como autônoma: você é excelente no que faz, mas o marketing toma um tempo que você não tem.</p>
+        <p style="margin-top:10px;">Por isso crio páginas que trabalham por você - enquanto você faz o que ama, sua LP está captando clientes 24h por dia.</p>
+        <div class="badges">
+          <span class="mini-badge">📄 +20 LPs entregues</span>
+          <span class="mini-badge">⚡ Entrega em até 2 dias</span>
+          <span class="mini-badge">✅ Satisfação garantida</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt lazy-section reveal" id="faq">
+    <div class="container">
+      <h2>Perguntas frequentes</h2>
+      <div class="faq" aria-label="Perguntas frequentes">
+        <article class="faq-item">
+          <button class="faq-question" type="button"><span>Preciso ter domínio ou hospedagem?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Não. Entrego a página pronta pra publicar. Posso te orientar na publicação sem custo adicional.</p></div>
+        </article>
+        <article class="faq-item">
+          <button class="faq-question" type="button"><span>E se eu não gostar do design?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Revisões ilimitadas até você aprovar. Só finalizo quando você estiver 100% satisfeita.</p></div>
+        </article>
+        <article class="faq-item">
+          <button class="faq-question" type="button"><span>Em quanto tempo fico com a LP no ar?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>O processo leva até 2 dias úteis da aprovação do briefing até a entrega final.</p></div>
+        </article>
+        <article class="faq-item">
+          <button class="faq-question" type="button"><span>Preciso me preocupar com o texto?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Não. Você responde um formulário rápido sobre sua especialidade e eu escrevo tudo.</p></div>
+        </article>
+        <article class="faq-item">
+          <button class="faq-question" type="button"><span>Como funciona o pagamento?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>50% para começar, 50% na entrega. Pix ou cartão.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-final lazy-section reveal" id="contato">
+    <div class="container">
+      <h2 class="cta-title">Pronta pra ter sua LP?</h2>
+      <p class="section-subtitle cta-subtitle">Me chama e eu te respondo em até 24h com os próximos passos.</p>
+      <div class="form-box cta-box">
+        <div class="cta-actions">
+          <a class="btn btn-accent full-btn" href="https://wa.me/5548988281035?text=Oi!%20Quero%20minha%20p%C3%A1gina%20pronta%20em%20at%C3%A9%202%20dias." target="_blank" rel="noopener noreferrer">👉 Quero minha página pronta em até 2 dias</a>
+          <a class="btn btn-whats full-btn" href="https://wa.me/5548988281035?text=Oi!%20Quero%20mais%20clientes%20pelo%20WhatsApp." target="_blank" rel="noopener noreferrer">👉 Falar no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer class="footer">
+  <div class="container footer-wrap">
+    <strong class="footer-logo">ImpulsoNutri</strong>
+    <div class="footer-links">
+      <a href="#inicio">Início</a>
+      <a href="#processo">Como funciona</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <p class="footer-note">© {{ currentYear }} ImpulsoNutri. Todos os direitos reservados.</p>
+  </div>
+</footer>
