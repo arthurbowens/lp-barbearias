@@ -1,4 +1,5 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, PLATFORM_ID, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,12 @@ import { AfterViewInit, Component } from '@angular/core';
 })
 export class App implements AfterViewInit {
   protected readonly currentYear = new Date().getFullYear();
+  private readonly platformId = inject(PLATFORM_ID);
 
   ngAfterViewInit(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
     this.initRevealObserver();
     this.initFaq();
   }

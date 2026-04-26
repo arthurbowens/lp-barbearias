@@ -148,9 +148,7 @@ h2 {
 
 .btn:focus-visible,
 .link-btn:focus-visible,
-.faq-question:focus-visible,
-.input:focus-visible,
-.select:focus-visible {
+.faq-question:focus-visible {
   outline: 3px solid rgba(74, 124, 111, 0.35);
   outline-offset: 2px;
 }
@@ -472,58 +470,8 @@ h2 {
   gap: 10px;
 }
 
-.field-grid {
-  display: grid;
-  gap: 12px;
-}
-
-.field label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 600;
-}
-
-.input,
-.select {
-  width: 100%;
-  min-height: 48px;
-  border-radius: 12px;
-  border: 1px solid rgba(74, 124, 111, 0.32);
-  padding: 10px 12px;
-  font: 400 1rem/1.2 "DM Sans", Arial, sans-serif;
-  background: #fff;
-}
-
-.input.error,
-.select.error {
-  border-color: #c04141;
-  background: #fff8f8;
-}
-
-.error-msg {
-  margin-top: 4px;
-  color: #a43737;
-  font-size: 0.86rem;
-  min-height: 18px;
-}
-
-.success-msg {
-  margin-top: 12px;
-  font-weight: 600;
-  color: #2e705f;
-  min-height: 24px;
-}
-
 .full-btn {
   width: 100%;
-}
-
-.whatsapp-direct {
-  margin-top: 12px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
 }
 
 .btn-whats {
@@ -596,8 +544,6 @@ h2 {
   .cards { grid-template-columns: repeat(2, 1fr); }
   .timeline { grid-template-columns: repeat(2, 1fr); }
   .checks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .field-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .field-grid .full { grid-column: span 2; }
   .nav { display: flex; }
 }
 
